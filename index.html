@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Admission Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Admission Application Form</h1>
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Personal Info</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Next of Kin</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Education</div>
+                </div>
+            </div>
+        </div>
+
+        <form id="admissionForm">
+            <!-- Step 1: Personal Information -->
+            <div class="form-step active" data-step="1">
+                <h2>Personal Information</h2>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-next" data-next="2">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Next of Kin Information -->
+            <div class="form-step" data-step="2">
+                <h2>Next of Kin Information</h2>
+                
+                <div class="form-group">
+                    <label for="kinFirstName">First Name *</label>
+                    <input type="text" id="kinFirstName" name="kinFirstName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="kinLastName">Last Name *</label>
+                    <input type="text" id="kinLastName" name="kinLastName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="kinRelationship">Relationship *</label>
+                    <input type="text" id="kinRelationship" name="kinRelationship" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="kinPhone">Phone Number *</label>
+                    <input type="tel" id="kinPhone" name="kinPhone" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="kinEmail">Email Address</label>
+                    <input type="email" id="kinEmail" name="kinEmail">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="kinAddress">Address *</label>
+                    <textarea id="kinAddress" name="kinAddress" rows="3" required></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-prev" data-prev="1">Previous</button>
+                    <button type="button" class="btn btn-next" data-next="3">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Previous Education -->
+            <div class="form-step" data-step="3">
+                <h2>Previous Education</h2>
+                
+                <div class="form-group">
+                    <label for="schoolName">School/Institution Name *</label>
+                    <input type="text" id="schoolName" name="schoolName" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="degree">Degree/Qualification *</label>
+                    <input type="text" id="degree" name="degree" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fieldOfStudy">Field of Study *</label>
+                    <input type="text" id="fieldOfStudy" name="fieldOfStudy" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="graduationYear">Graduation Year *</label>
+                    <input type="number" id="graduationYear" name="graduationYear" min="1950" max="2025" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="gpa">GPA/Grade *</label>
+                    <input type="text" id="gpa" name="gpa" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="achievements">Achievements/Honors</label>
+                    <textarea id="achievements" name="achievements" rows="3"></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-prev" data-prev="2">Previous</button>
+                    <button type="submit" class="btn btn-submit">Submit Application</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+            <h2>✓ Application Submitted Successfully!</h2>
+            <p>Thank you for your application. We will review it and get back to you soon.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
